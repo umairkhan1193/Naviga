@@ -3,23 +3,23 @@ import { StyleSheet } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import PRo from "./Terminal/props";
-import { View } from "react-native-web";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          initialParams={{ name: "Umair" }}
-          name="Home"
-          component={Home}
-        />
-        <Stack.Screen name="Detail" component={Details} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PRo name={"umair"} num={123}></PRo>
+
     /*
+  <NavigationContainer>
+    <Stack.Navigator  initialRouteName='Home'>
+      <Stack.Screen initialParams={{name: "Umair"}} name='Home'   component={Home} />
+      <Stack.Screen name='Detail' component={Details} />
+    </Stack.Navigator>
+  </NavigationContainer>
+
+
+    
     <NavigationContainer>
        <Stack.Navigator initialRouteName='Login'
        screenOptions={{
