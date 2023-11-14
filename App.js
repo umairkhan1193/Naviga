@@ -8,18 +8,18 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   return (
-    <PRo name={"umair"} num={123}></PRo>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          initialParams={{ name: "Umair" }}
+          name="Home"
+          component={Home}
+        />
+        <Stack.Screen name="Detail" component={Details} />
+      </Stack.Navigator>
+    </NavigationContainer>
 
     /*
-  <NavigationContainer>
-    <Stack.Navigator  initialRouteName='Home'>
-      <Stack.Screen initialParams={{name: "Umair"}} name='Home'   component={Home} />
-      <Stack.Screen name='Detail' component={Details} />
-    </Stack.Navigator>
-  </NavigationContainer>
-
-
-    
     <NavigationContainer>
        <Stack.Navigator initialRouteName='Login'
        screenOptions={{
