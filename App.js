@@ -9,34 +9,37 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          headerTitleAlign: "center",
+        }}
+      >
         <Stack.Screen
-          initialParams={{ name: "Umair" }}
-          name="Home"
-          component={Home}
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+          style={styles.container}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ title: "Profile" }}
+        ></Stack.Screen>
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen name="Detail" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
-
-    /*
-    <NavigationContainer>
-       <Stack.Navigator initialRouteName='Login'
-       screenOptions={{
-        headerStyle: {
-          backgroundColor: '#f4511e',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTitleAlign:'center'
-      }}>
-        <Stack.Screen name="Login" component={Login} options={{headerShown:false}} style={styles.container}></Stack.Screen>
-        <Stack.Screen name="Profile" component={Profile} options={{title:'Profile'}}></Stack.Screen>
-        <Stack.Screen name="Signup" component={Signup} options={{headerShown:false}}/> 
-      </Stack.Navigator >
-    </NavigationContainer>*/
   );
 }
 
